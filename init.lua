@@ -81,6 +81,8 @@ local config = {
       -- You can also add new plugins here as well:
       -- { "andweeb/presence.nvim" },
       -- {
+      { "b0o/schemastore.nvim" },
+
       {
         "catppuccin/nvim",
         as = "catppuccin",
@@ -154,7 +156,7 @@ local config = {
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
-          ["fF"] = { '<cmd>require("telescope.builtin").find_files { hidden = true }<cr>', "Search hidden" },
+          ["fF"] = { '<cmd>lua require("telescope.builtin").find_files { hidden = true }<cr>', "Search hidden" },
         },
       },
     },
@@ -193,17 +195,17 @@ local config = {
     -- Add overrides for LSP server settings, the keys are the name of the server
     ["server-settings"] = {
       -- example for addings schemas to yamlls
-      -- yamlls = {
-      --   settings = {
-      --     yaml = {
-      --       schemas = {
-      --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-      --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-      --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-      --       },
-      --     },
-      --   },
-      -- },
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+              ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+              ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+            },
+          },
+        },
+      },
     },
   },
 
