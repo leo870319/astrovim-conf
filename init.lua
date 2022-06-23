@@ -87,7 +87,6 @@ local config = {
         -- config = function()
         --   require("sonokai").setup()
         -- end,
-
       },
       { "b0o/schemastore.nvim" },
 
@@ -113,6 +112,7 @@ local config = {
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
       config.sources = {
         -- Set a formatter
+        null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.rufo,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.fixjson,
@@ -164,11 +164,11 @@ local config = {
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
-          ["e"] = { '<cmd>silent! cd %:h|Neotree toggle<cr>', "Search hidden" },
-          ["o"] = { '<cmd>silent! cd %:h|Neotree focus<cr>', "Search hidden" },
+          ["e"] = { "<cmd>silent! cd %:h|Neotree toggle<cr>", "Search hidden" },
+          ["o"] = { "<cmd>silent! cd %:h|Neotree focus<cr>", "Search hidden" },
           ["fF"] = { '<cmd>lua require("telescope.builtin").find_files { hidden = true }<cr>', "Search hidden" },
           ["fd"] = { '<cmd>lua require("telescope.builtin").diagnostics { bufnr = 0 }<cr>', "Search diagnostics" },
-          ["lf"] = { '<cmd>lua vim.lsp.buf.formatting_sync(nil, 3500)<cr>', "Format code" },
+          ["lf"] = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 3500)<cr>", "Format code" },
         },
       },
     },
