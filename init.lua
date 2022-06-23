@@ -18,7 +18,7 @@ local config = {
   },
 
   -- Set colorscheme
-  colorscheme = "catppuccin",
+  colorscheme = "sonokai",
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -94,9 +94,9 @@ local config = {
       {
         "catppuccin/nvim",
         as = "catppuccin",
-        config = function()
-          require("catppuccin").setup()
-        end,
+        -- config = function()
+        --   require("catppuccin").setup()
+        -- end,
       },
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
