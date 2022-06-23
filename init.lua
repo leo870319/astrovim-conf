@@ -81,6 +81,14 @@ local config = {
       -- You can also add new plugins here as well:
       -- { "andweeb/presence.nvim" },
       -- {
+      {
+        "sainnhe/sonokai",
+        as = "sonokai",
+        -- config = function()
+        --   require("sonokai").setup()
+        -- end,
+
+      },
       { "b0o/schemastore.nvim" },
 
       {
@@ -211,7 +219,7 @@ local config = {
 
   -- Diagnostics configuration (for vim.diagnostics.config({}))
   diagnostics = {
-    virtual_text = false,
+    virtual_text = true,
     underline = true,
   },
 
