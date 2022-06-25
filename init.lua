@@ -115,7 +115,8 @@ local config = {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.rufo,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.fixjson,
+        null_ls.builtins.formatting.prettierd,
+        -- null_ls.builtins.formatting.fixjson,
         -- Set a linter
         null_ls.builtins.diagnostics.rubocop,
         null_ls.builtins.diagnostics.flake8,
