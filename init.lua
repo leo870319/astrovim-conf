@@ -186,6 +186,7 @@ local config = {
           ["fF"] = { '<cmd>lua require("telescope.builtin").find_files { hidden = true }<cr>', "Search hidden" },
           ["fd"] = { '<cmd>lua require("telescope.builtin").diagnostics { bufnr = 0 }<cr>', "Search diagnostics" },
           ["lf"] = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 10000)<cr>", "Format code" },
+          ["gd"] = { "<cmd>Gitsigns diffthis ~0<cr>", "Git diff HEAD" },
         },
       },
     },
