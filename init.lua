@@ -97,6 +97,22 @@ local config = {
         --   require("catppuccin").setup()
         -- end,
       },
+      {
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+          { "tami5/sqlite.lua", module = "sqlite" },
+          -- you'll need at least one of these
+          { "nvim-telescope/telescope.nvim" },
+
+          -- {'ibhagwan/fzf-lua'},
+        },
+        config = function()
+          require("neoclip").setup {
+            enable_persistent_history = true,
+            continuous_sync = true,
+          }
+        end,
+      },
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
       --   config = function()
@@ -165,8 +181,8 @@ local config = {
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
-          ["e"] = { "<cmd>silent! cd %:h|Neotree toggle<cr>", "Search hidden" },
-          ["o"] = { "<cmd>silent! cd %:h|Neotree focus<cr>", "Search hidden" },
+          ["e"] = { "<cmd>silent! cd %:h|Neotree toggle<cr>", "Open Neotree" },
+          ["o"] = { "<cmd>silent! cd %:h|Neotree focus<cr>", "Focus Neotree" },
           ["fF"] = { '<cmd>lua require("telescope.builtin").find_files { hidden = true }<cr>', "Search hidden" },
           ["fd"] = { '<cmd>lua require("telescope.builtin").diagnostics { bufnr = 0 }<cr>', "Search diagnostics" },
           ["lf"] = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 10000)<cr>", "Format code" },
