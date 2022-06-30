@@ -178,6 +178,12 @@ local config = {
       -- first key is the mode, n == normal mode
       n = {
         -- second key is the prefix, <leader> prefixes
+        ["z"] = {
+          ["h"] = { "H8k", "First line of window" },
+          ["l"] = { "L8j", "Last line of window" },
+          ["m"] = { "M", "Middle line of window" },
+        },
+
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
@@ -250,7 +256,10 @@ local config = {
   polish = function()
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
-    vim.keymap.set("i", "<M-;>", "<C-o>A")
+    vim.keymap.set("i", "<ESC>l", "<Right>")
+    vim.keymap.set("i", "<ESC>h", "<Left>")
+    vim.keymap.set("i", "<ESC>j", "<Down>")
+    vim.keymap.set("i", "<ESC>k", "<Up>")
 
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
