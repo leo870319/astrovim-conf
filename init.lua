@@ -81,6 +81,7 @@ local config = {
       -- You can also add new plugins here as well:
       -- { "andweeb/presence.nvim" },
       -- {
+      { "wellle/targets.vim" },
       {
         "sainnhe/sonokai",
         as = "sonokai",
