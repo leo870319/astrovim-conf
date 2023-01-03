@@ -257,12 +257,14 @@ local config = {
   polish = function()
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
-    vim.keymap.set("i", "<ESC>l", "<Right>")
-    vim.keymap.set("i", "<ESC>h", "<Left>")
-    vim.keymap.set("i", "<ESC>j", "<Down>")
-    vim.keymap.set("i", "<ESC>k", "<Up>")
+    -- vim.keymap.set("i", "<ESC>l", "<Right>")
+    -- vim.keymap.set("i", "<ESC>h", "<Left>")
+    -- vim.keymap.set("i", "<ESC>j", "<Down>")
+    -- vim.keymap.set("i", "<ESC>k", "<Up>")
 
     -- Set autocommands
+    vim.api.nvim_command ":au FocusLost * silent! wa"
+
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePost", {
       desc = "Sync packer after modifying plugins.lua",
